@@ -1,10 +1,13 @@
 const express = require('express');
+const app = express();
 
 const cors = require('cors');
 
 const morgan = require('morgan');
 
 const mongoose = require('mongoose');
+
+const bodyParser = require('body-parser');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -15,8 +18,12 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true})
 mongoose.connection.on('error', err => {
     console.log(`CONNECTION FAILED : ${err.message}`)
 });
-const app = express();
 
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cors());
+
+app.use('/', require('./Routes/AdminRoutes'));
 
 port = process.env.PORT || 3030;
 app.listen(port, () => {
