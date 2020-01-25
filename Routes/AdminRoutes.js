@@ -3,6 +3,6 @@ const Admin = require('../Controllers/AdminController');
 
 const router = express.Router();
 
-router.post('/signup/', Admin.createAdmin);
+router.post('/create/', Admin.createAdmin);
 
 module.exports = router;
