@@ -27,6 +27,7 @@ app.use('/', require('./Routes/ConsumerRoutes'));
 app.use('/admin', require('./Routes/AdminRoutes'));
 app.use('/city', require('./Routes/CityRoutes'));
 app.use('/rubrique', require('./Routes/RubricRoutes'));
+app.use('/articleAdmin', require('./Routes/ArticleAdminRoutes'));
 
 port = process.env.PORT || 3030;
 app.listen(port, () => {
