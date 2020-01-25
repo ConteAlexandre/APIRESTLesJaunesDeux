@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const {emailValidate, firstnameValidate, lastnameValidate, usernameValidate} = require('../Validator/AdminValidator');
 
-consumerSchema = mongoose.Schema({
+consumerSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [ true, "L'email est obligatoire"],

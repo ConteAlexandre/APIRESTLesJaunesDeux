@@ -14,11 +14,11 @@ module.exports = {
                 res.status(200).json({ message: "Bravo vous voici enregistrer !"})
             })
             .catch(err => {
-                if (err['errors']['firstname']) return res.status(401).json({ error1: err['errors']['firstname']['message']});
-                if (err['errors']['lastname']) return res.status(401).json({ error2: err['errors']['lastname']['message']});
-                if (err['errors']['username']) return res.status(401).json({ error3: err['errors']['username']['message']});
-                if (err['errors']['email']) return res.status(401).json({ error4: err['errors']['email']['message']});
-                if (err['errors']['hashed_password']) return res.status(401).json({ error5: err['errors']['hashed_password']['message']});
+                if (err['errors']['firstname']) return res.status(401).json({ error: err['errors']['firstname']['message']});
+                if (err['errors']['lastname']) return res.status(401).json({ error: err['errors']['lastname']['message']});
+                if (err['errors']['username']) return res.status(401).json({ error: err['errors']['username']['message']});
+                if (err['errors']['email']) return res.status(401).json({ error: err['errors']['email']['message']});
+                if (err['errors']['hashed_password']) return res.status(401).json({ error: err['errors']['hashed_password']['message']});
             })
     }
 }

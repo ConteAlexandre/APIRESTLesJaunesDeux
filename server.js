@@ -25,6 +25,7 @@ app.use(cors());
 
 app.use('/admin', require('./Routes/AdminRoutes'));
 app.use('/', require('./Routes/ConsumerRoutes'));
+app.use('/city', require('./Routes/CityRoutes'));
 
 port = process.env.PORT || 3030;
 app.listen(port, () => {
