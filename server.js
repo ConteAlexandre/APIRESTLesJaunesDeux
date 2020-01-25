@@ -23,9 +23,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/admin', require('./Routes/AdminRoutes'));
 app.use('/', require('./Routes/ConsumerRoutes'));
+app.use('/admin', require('./Routes/AdminRoutes'));
 app.use('/city', require('./Routes/CityRoutes'));
+app.use('/rubrique', require('./Routes/RubricRoutes'));
 
 port = process.env.PORT || 3030;
 app.listen(port, () => {
